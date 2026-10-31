@@ -1,0 +1,19 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 860 446' width='860' height='446' role='img' aria-label='paranoid-sre guard blocks destructive commands against production and allows safe cleanup'>
+<style>text{font-family:'JetBrains Mono','SFMono-Regular',Menlo,Consolas,monospace;font-size:14px;white-space:pre}.l{opacity:0;animation-duration:14.20s;animation-iteration-count:infinite}@media (prefers-reduced-motion:reduce){.l{animation:none!important;opacity:1}}</style>
+<style>@keyframes s0{0%,0.0%{opacity:0}0.4%,100%{opacity:1}}.l0{animation-name:s0}@keyframes s1{0%,4.2%{opacity:0}4.6%,100%{opacity:1}}.l1{animation-name:s1}@keyframes s3{0%,12.7%{opacity:0}13.0%,100%{opacity:1}}.l3{animation-name:s3}@keyframes s4{0%,16.9%{opacity:0}17.3%,100%{opacity:1}}.l4{animation-name:s4}@keyframes s6{0%,25.4%{opacity:0}25.7%,100%{opacity:1}}.l6{animation-name:s6}@keyframes s7{0%,29.6%{opacity:0}29.9%,100%{opacity:1}}.l7{animation-name:s7}@keyframes s9{0%,38.0%{opacity:0}38.4%,100%{opacity:1}}.l9{animation-name:s9}@keyframes s10{0%,42.3%{opacity:0}42.6%,100%{opacity:1}}.l10{animation-name:s10}@keyframes s12{0%,50.7%{opacity:0}51.1%,100%{opacity:1}}.l12{animation-name:s12}@keyframes s13{0%,54.9%{opacity:0}55.3%,100%{opacity:1}}.l13{animation-name:s13}@keyframes s15{0%,63.4%{opacity:0}63.7%,100%{opacity:1}}.l15{animation-name:s15}@keyframes s16{0%,67.6%{opacity:0}68.0%,100%{opacity:1}}.l16{animation-name:s16}</style>
+<rect width='860' height='446' rx='10' fill='#0d1117'/>
+<circle cx='22' cy='20' r='6' fill='#ff5f56'/><circle cx='42' cy='20' r='6' fill='#ffbd2e'/><circle cx='62' cy='20' r='6' fill='#27c93f'/>
+<text x='430.0' y='25' text-anchor='middle' fill='#8b949e' style='font-size:12px'>paranoid-sre: it's not paranoia if prod is real</text>
+<text class='l l0' x='22' y='52' fill='#74c0fc'>$ curl -X DELETE https://api.example-host.com/v1/volumes/vol-prod-db/backups</text>
+<text class='l l1' x='22' y='74' fill='#ff6b6b' font-weight='700'>  DENY  raw API delete call; check what it targets, and the command names production</text>
+<text class='l l3' x='22' y='118' fill='#74c0fc'>$ terraform destroy -auto-approve</text>
+<text class='l l4' x='22' y='140' fill='#ff6b6b' font-weight='700'>  DENY  destroys every resource in the stack</text>
+<text class='l l6' x='22' y='184' fill='#74c0fc'>$ git push --force origin main</text>
+<text class='l l7' x='22' y='206' fill='#ff6b6b' font-weight='700'>  DENY  force-push to a protected branch rewrites history everyone else depends on</text>
+<text class='l l9' x='22' y='250' fill='#74c0fc'>$ psql -c &quot;DROP TABLE users&quot;</text>
+<text class='l l10' x='22' y='272' fill='#ff6b6b' font-weight='700'>  DENY  DROP removes data and structure with no undo</text>
+<text class='l l12' x='22' y='316' fill='#74c0fc'>$ git stash clear</text>
+<text class='l l13' x='22' y='338' fill='#ffd43b' font-weight='700'>  ASK   deletes stashed work</text>
+<text class='l l15' x='22' y='382' fill='#74c0fc'>$ rm -rf ./node_modules</text>
+<text class='l l16' x='22' y='404' fill='#51cf66' font-weight='700'>  ALLOW</text>
+</svg>

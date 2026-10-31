@@ -2,6 +2,8 @@
 
 **paranoid-sre** makes your coding agent act like the on-call SRE who has been paged at 3 a.m. too many times: it names the target, proves the environment, checks the backup and writes the rollback before it runs anything destructive.
 
+<p align="center"><img src="docs/assets/hero.svg" alt="The guard blocks a production volume delete, terraform destroy, a force-push to main and DROP TABLE, asks before git stash clear, and allows rm -rf ./node_modules" width="760"></p>
+
 Two parts, both free to run:
 
 - **A persona skill** that changes how the agent plans destructive work.
