@@ -82,7 +82,7 @@ Any "ask" that names `prod`, `production`, `prd` or `live` becomes a "deny". `rm
 
 ## Sibling project
 
-[walkaway](https://github.com/shahabajsk/walkaway) audits your agent loops; paranoid-sre guards each command.
+[walkaway](https://github.com/shahabajsk/walkaway) (public from 17 November 2026) audits your agent loops; paranoid-sre guards each command.
 
 ## Contributing
 
