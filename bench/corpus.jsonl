@@ -130,3 +130,26 @@
 {"cmd": "aws rds delete-db-cluster-snapshot --db-cluster-snapshot-identifier prod-nightly", "label": "destructive", "category": "incident"}
 {"cmd": "aws backup delete-recovery-point --backup-vault-name prod --recovery-point-arn arn:aws:backup:x", "label": "destructive", "category": "incident"}
 {"cmd": "curl -X DELETE https://api.example-host.com/v1/volumes/vol-prod-db/backups", "label": "destructive", "category": "incident"}
+{"cmd": "grep -rn \"DROP TABLE\" migrations/", "label": "safe", "category": "review"}
+{"cmd": "rg \"terraform destroy\" docs/", "label": "safe", "category": "review"}
+{"cmd": "git log --grep=\"DROP DATABASE\"", "label": "safe", "category": "review"}
+{"cmd": "git commit -m \"docs: never run DROP DATABASE\"", "label": "safe", "category": "review"}
+{"cmd": "gh issue create --title \"terraform destroy fails\"", "label": "safe", "category": "review"}
+{"cmd": "git commit -m \"wip; rm -rf later\"", "label": "safe", "category": "review"}
+{"cmd": "echo \"x\" > docs/notes.md", "label": "safe", "category": "review"}
+{"cmd": "find . -name \"*.log\" | xargs grep -l \"DROP TABLE\"", "label": "safe", "category": "review"}
+{"cmd": "rm -rf $HOME/.cache/pip", "label": "destructive", "category": "review"}
+{"cmd": "rm -rf \"$TMPDIR/cache\"", "label": "destructive", "category": "review"}
+{"cmd": "bash -lc \"rm -rf ~\"", "label": "destructive", "category": "review"}
+{"cmd": "git push --delete origin main", "label": "destructive", "category": "review"}
+{"cmd": "chmod -R 000 /", "label": "destructive", "category": "review"}
+{"cmd": "echo / | xargs rm -rf", "label": "destructive", "category": "review"}
+{"cmd": "> /etc/passwd", "label": "destructive", "category": "review"}
+{"cmd": "mv ~ /dev/null", "label": "destructive", "category": "review"}
+{"cmd": "git reflog expire --expire=now --all && git gc --prune=now", "label": "destructive", "category": "review"}
+{"cmd": "git checkout -- .", "label": "destructive", "category": "review"}
+{"cmd": "git stash clear", "label": "destructive", "category": "review"}
+{"cmd": "crontab -r", "label": "destructive", "category": "review"}
+{"cmd": "kill -9 -1", "label": "destructive", "category": "review"}
+{"cmd": "kubectl scale deploy --all --replicas=0 -n prod", "label": "destructive", "category": "review"}
+{"cmd": "gh repo delete my-org/app --yes", "label": "destructive", "category": "review"}

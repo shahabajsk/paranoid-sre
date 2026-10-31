@@ -74,3 +74,36 @@ def test_prod_inside_resource_names():
     assert check("curl -X DELETE https://api.example-host.com/v1/volumes/vol-staging-db").decision == "ask"
     assert check("kubectl delete pod web-1 -n production-eu").decision == "deny"
     assert check("echo productivity && ls").decision == "allow"
+
+
+@pytest.mark.parametrize("cmd,want", [
+    # review round 1: quoted text in read, search and commit commands is data
+    ('grep -rn "DROP TABLE" migrations/', "allow"),
+    ('rg "terraform destroy" docs/', "allow"),
+    ('git log --grep="DROP DATABASE"', "allow"),
+    ('git commit -m "docs: never run DROP DATABASE"', "allow"),
+    ('gh issue create --title "terraform destroy fails"', "allow"),
+    ('git commit -m "wip; rm -rf later"', "allow"),
+    # cache cleanups outside the project ask, not deny
+    ("rm -rf $HOME/.cache/pip", "ask"),
+    ('rm -rf "$TMPDIR/cache"', "ask"),
+    # review round 1: previously missed
+    ('bash -lc "rm -rf ~"', "deny"),
+    ("git push --delete origin main", "deny"),
+    ("chmod -R 000 /", "deny"),
+    ("echo / | xargs rm -rf", "deny"),
+    ("> /etc/passwd", "deny"),
+    ("mv ~ /dev/null", "deny"),
+    ("git reflog expire --expire=now --all && git gc --prune=now", "deny"),
+    ("git checkout -- .", "ask"),
+    ("git stash clear", "ask"),
+    ("crontab -r", "deny"),
+    ("kill -9 -1", "deny"),
+    ("kubectl scale deploy --all --replicas=0 -n prod", "deny"),
+    # executions inside strings are still caught
+    ('psql -c "DROP DATABASE app;"', "deny"),
+    ('bash -c "terraform destroy"', "deny"),
+    ("echo 'DROP SCHEMA public CASCADE;' | psql", "deny"),
+])
+def test_review_round_1(cmd, want):
+    assert check(cmd).decision == want
