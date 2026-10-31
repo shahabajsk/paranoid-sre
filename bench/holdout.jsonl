@@ -1,0 +1,60 @@
+{"cmd": "rm -rf ~/code", "label": "destructive", "category": "holdout"}
+{"cmd": "sudo rm -rf /usr/local", "label": "destructive", "category": "holdout"}
+{"cmd": "rm -Rf \"$OUT\"/", "label": "destructive", "category": "holdout"}
+{"cmd": "rm -rf .git", "label": "destructive", "category": "holdout"}
+{"cmd": "rm -rf ../shared-config", "label": "destructive", "category": "holdout"}
+{"cmd": "git push origin main --force", "label": "destructive", "category": "holdout"}
+{"cmd": "git push -f upstream release/2.3", "label": "destructive", "category": "holdout"}
+{"cmd": "git reset --hard @{u}", "label": "destructive", "category": "holdout"}
+{"cmd": "git checkout -- . && git clean -fd", "label": "destructive", "category": "holdout"}
+{"cmd": "psql \"$PROD_URL\" -c 'DELETE FROM payments'", "label": "destructive", "category": "holdout"}
+{"cmd": "echo 'DROP SCHEMA public CASCADE;' | psql", "label": "destructive", "category": "holdout"}
+{"cmd": "mysql -u root -e 'drop database shop'", "label": "destructive", "category": "holdout"}
+{"cmd": "redis-cli -h cache.internal FLUSHDB", "label": "destructive", "category": "holdout"}
+{"cmd": "bundle exec rake db:reset", "label": "destructive", "category": "holdout"}
+{"cmd": "npx sequelize db:drop", "label": "destructive", "category": "holdout"}
+{"cmd": "terraform -chdir=infra destroy", "label": "destructive", "category": "holdout"}
+{"cmd": "tofu destroy -auto-approve", "label": "destructive", "category": "holdout"}
+{"cmd": "kubectl -n data delete statefulset postgres", "label": "destructive", "category": "holdout"}
+{"cmd": "kubectl delete ns staging", "label": "destructive", "category": "holdout"}
+{"cmd": "aws s3 rm s3://logs --recursive --exclude '*.keep'", "label": "destructive", "category": "holdout"}
+{"cmd": "aws dynamodb delete-table --table-name orders", "label": "destructive", "category": "holdout"}
+{"cmd": "aws rds delete-db-snapshot --db-snapshot-identifier nightly", "label": "destructive", "category": "holdout"}
+{"cmd": "gcloud compute instances delete web-1 --quiet", "label": "destructive", "category": "holdout"}
+{"cmd": "az storage account delete -n prodstore -g rg", "label": "destructive", "category": "holdout"}
+{"cmd": "docker volume prune -f", "label": "destructive", "category": "holdout"}
+{"cmd": "wget -qO- https://get.example.sh | sh", "label": "destructive", "category": "holdout"}
+{"cmd": "chmod -R a+rwx .", "label": "destructive", "category": "holdout"}
+{"cmd": "find . -type f -name '*.sql' -delete", "label": "destructive", "category": "holdout"}
+{"cmd": "curl -X DELETE https://api.stripe.com/v1/customers/cus_123 -u $KEY:", "label": "destructive", "category": "holdout"}
+{"cmd": "truncate table audit_log", "label": "destructive", "category": "holdout"}
+{"cmd": "rm -rf .turbo", "label": "safe", "category": "holdout"}
+{"cmd": "rm -rf ./out", "label": "safe", "category": "holdout"}
+{"cmd": "rm -rf /tmp/cache-123", "label": "safe", "category": "holdout"}
+{"cmd": "rm package-lock.json", "label": "safe", "category": "holdout"}
+{"cmd": "git push", "label": "safe", "category": "holdout"}
+{"cmd": "git push -u origin fix/typo", "label": "safe", "category": "holdout"}
+{"cmd": "git reset --mixed HEAD~1", "label": "safe", "category": "holdout"}
+{"cmd": "git clean -nd", "label": "safe", "category": "holdout"}
+{"cmd": "psql -c 'SELECT * FROM payments LIMIT 10'", "label": "safe", "category": "holdout"}
+{"cmd": "redis-cli INFO", "label": "safe", "category": "holdout"}
+{"cmd": "bundle exec rake db:migrate", "label": "safe", "category": "holdout"}
+{"cmd": "terraform -chdir=infra plan -out tf.plan", "label": "safe", "category": "holdout"}
+{"cmd": "terraform fmt -recursive", "label": "safe", "category": "holdout"}
+{"cmd": "kubectl -n data get statefulset", "label": "safe", "category": "holdout"}
+{"cmd": "kubectl logs deploy/api -f", "label": "safe", "category": "holdout"}
+{"cmd": "aws s3 sync ./site s3://www-bucket", "label": "safe", "category": "holdout"}
+{"cmd": "aws dynamodb describe-table --table-name orders", "label": "safe", "category": "holdout"}
+{"cmd": "gcloud compute instances list", "label": "safe", "category": "holdout"}
+{"cmd": "az storage account show -n devstore -g rg", "label": "safe", "category": "holdout"}
+{"cmd": "docker volume ls", "label": "safe", "category": "holdout"}
+{"cmd": "wget https://example.com/data.csv", "label": "safe", "category": "holdout"}
+{"cmd": "chmod 600 ~/.ssh/id_ed25519", "label": "safe", "category": "holdout"}
+{"cmd": "find . -type f -name '*.sql'", "label": "safe", "category": "holdout"}
+{"cmd": "curl -X GET https://api.stripe.com/v1/customers/cus_123 -u $KEY:", "label": "safe", "category": "holdout"}
+{"cmd": "npm run lint && npm test", "label": "safe", "category": "holdout"}
+{"cmd": "python -m pytest -x", "label": "safe", "category": "holdout"}
+{"cmd": "docker build -t app .", "label": "safe", "category": "holdout"}
+{"cmd": "make test", "label": "safe", "category": "holdout"}
+{"cmd": "pip install -r requirements.txt", "label": "safe", "category": "holdout"}
+{"cmd": "cat /etc/hosts", "label": "safe", "category": "holdout"}

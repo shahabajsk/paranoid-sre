@@ -1,0 +1,6 @@
+{"cmd": "python3 -c \"import shutil; shutil.rmtree('/srv/data')\"", "label": "destructive", "category": "bypass"}
+{"cmd": "echo cm0gLXJmIH4= | base64 -d | sh", "label": "destructive", "category": "bypass"}
+{"cmd": "node -e \"require('fs').rmSync(process.env.HOME,{recursive:true})\"", "label": "destructive", "category": "bypass"}
+{"cmd": "perl -e 'system(\"rm\",\"-rf\",$ENV{HOME})'", "label": "destructive", "category": "bypass"}
+{"cmd": "bash ./scripts/cleanup.sh", "label": "destructive", "category": "bypass"}
+{"cmd": "make nuke", "label": "destructive", "category": "bypass"}

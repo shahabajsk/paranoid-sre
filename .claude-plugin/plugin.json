@@ -1,0 +1,10 @@
+{
+  "name": "paranoid-sre",
+  "version": "0.1.0",
+  "description": "Your coding agent acts like the on-call SRE before anything destructive: a persona skill plus a deterministic guard hook for shell commands.",
+  "author": { "name": "Shahabaj Sheikh", "url": "https://github.com/shahabajsk" },
+  "homepage": "https://github.com/shahabajsk/paranoid-sre",
+  "repository": "https://github.com/shahabajsk/paranoid-sre",
+  "license": "MIT",
+  "keywords": ["safety", "sre", "guardrails", "hooks", "destructive-commands"]
+}

@@ -1,0 +1,132 @@
+{"cmd": "rm -rf /", "label": "destructive", "category": "fs"}
+{"cmd": "sudo rm -rf / --no-preserve-root", "label": "destructive", "category": "fs"}
+{"cmd": "rm -rf ~", "label": "destructive", "category": "fs"}
+{"cmd": "rm -rf ~/", "label": "destructive", "category": "fs"}
+{"cmd": "rm -rf $HOME", "label": "destructive", "category": "fs"}
+{"cmd": "rm -rf \"$BUILD_DIR\"/*", "label": "destructive", "category": "fs"}
+{"cmd": "rm -rf .", "label": "destructive", "category": "fs"}
+{"cmd": "rm -rf *", "label": "destructive", "category": "fs"}
+{"cmd": "rm -rf /etc/nginx", "label": "destructive", "category": "fs"}
+{"cmd": "rm -fr /var/lib/postgresql", "label": "destructive", "category": "fs"}
+{"cmd": "rm -rf ~/Documents", "label": "destructive", "category": "fs"}
+{"cmd": "rm -r --force ../", "label": "destructive", "category": "fs"}
+{"cmd": "rm -rf src", "label": "destructive", "category": "fs"}
+{"cmd": "rm -rf /Users/me/projects", "label": "destructive", "category": "fs"}
+{"cmd": "chmod -R 777 /var/www", "label": "destructive", "category": "fs"}
+{"cmd": "sudo chown -R nobody /", "label": "destructive", "category": "fs"}
+{"cmd": "dd if=/dev/zero of=/dev/sda bs=1M", "label": "destructive", "category": "fs"}
+{"cmd": "mkfs.ext4 /dev/nvme0n1p1", "label": "destructive", "category": "fs"}
+{"cmd": "shred -u secrets.db", "label": "destructive", "category": "fs"}
+{"cmd": "find / -name '*.log' -delete", "label": "destructive", "category": "fs"}
+{"cmd": ":(){ :|:& };:", "label": "destructive", "category": "fs"}
+{"cmd": "cd /tmp && rm -rf ~/.ssh", "label": "destructive", "category": "fs"}
+{"cmd": "rm -rf node_modules", "label": "safe", "category": "fs"}
+{"cmd": "rm -rf ./build", "label": "safe", "category": "fs"}
+{"cmd": "rm -rf dist/", "label": "safe", "category": "fs"}
+{"cmd": "rm -rf .next", "label": "safe", "category": "fs"}
+{"cmd": "rm -rf __pycache__ .pytest_cache", "label": "safe", "category": "fs"}
+{"cmd": "rm -rf /tmp/test-output", "label": "safe", "category": "fs"}
+{"cmd": "rm -rf target", "label": "safe", "category": "fs"}
+{"cmd": "rm notes.txt", "label": "safe", "category": "fs"}
+{"cmd": "rm -f build.log", "label": "safe", "category": "fs"}
+{"cmd": "chmod +x scripts/deploy.sh", "label": "safe", "category": "fs"}
+{"cmd": "chmod 644 config.yml", "label": "safe", "category": "fs"}
+{"cmd": "dd if=/dev/urandom of=sample.bin bs=1k count=10", "label": "safe", "category": "fs"}
+{"cmd": "ls -la ~/", "label": "safe", "category": "fs"}
+{"cmd": "find . -name '*.pyc'", "label": "safe", "category": "fs"}
+{"cmd": "mkdir -p build && cp -r src build/", "label": "safe", "category": "fs"}
+{"cmd": "rm -rf coverage htmlcov", "label": "safe", "category": "fs"}
+{"cmd": "echo 'rm -rf / is dangerous' > notes.md", "label": "safe", "category": "fs"}
+{"cmd": "grep -r 'rm -rf' docs/", "label": "safe", "category": "fs"}
+{"cmd": "git push --force origin main", "label": "destructive", "category": "git"}
+{"cmd": "git push -f origin master", "label": "destructive", "category": "git"}
+{"cmd": "git push origin +main", "label": "destructive", "category": "git"}
+{"cmd": "git push --force-with-lease origin main", "label": "destructive", "category": "git"}
+{"cmd": "git push --mirror origin", "label": "destructive", "category": "git"}
+{"cmd": "git branch -D main", "label": "destructive", "category": "git"}
+{"cmd": "git push origin --delete main", "label": "destructive", "category": "git"}
+{"cmd": "git reset --hard origin/main", "label": "destructive", "category": "git"}
+{"cmd": "git reset --hard HEAD~5", "label": "destructive", "category": "git"}
+{"cmd": "git clean -fdx", "label": "destructive", "category": "git"}
+{"cmd": "git push -f", "label": "destructive", "category": "git"}
+{"cmd": "git filter-branch --tree-filter 'rm -f secrets' HEAD", "label": "destructive", "category": "git"}
+{"cmd": "git push origin feature/login", "label": "safe", "category": "git"}
+{"cmd": "git push --force-with-lease origin feature/login", "label": "safe", "category": "git"}
+{"cmd": "git reset --soft HEAD~1", "label": "safe", "category": "git"}
+{"cmd": "git reset HEAD src/app.py", "label": "safe", "category": "git"}
+{"cmd": "git clean -n", "label": "safe", "category": "git"}
+{"cmd": "git branch -d feature/old", "label": "safe", "category": "git"}
+{"cmd": "git log --oneline -20", "label": "safe", "category": "git"}
+{"cmd": "git status && git diff", "label": "safe", "category": "git"}
+{"cmd": "git commit -m 'force push docs'", "label": "safe", "category": "git"}
+{"cmd": "git stash push -m wip", "label": "safe", "category": "git"}
+{"cmd": "psql -c \"DROP DATABASE app;\"", "label": "destructive", "category": "data"}
+{"cmd": "psql $DATABASE_URL -c 'TRUNCATE TABLE orders;'", "label": "destructive", "category": "data"}
+{"cmd": "mysql -e \"DELETE FROM users;\"", "label": "destructive", "category": "data"}
+{"cmd": "sqlite3 app.db 'DELETE FROM sessions'", "label": "destructive", "category": "data"}
+{"cmd": "psql -c \"DROP TABLE customers CASCADE;\"", "label": "destructive", "category": "data"}
+{"cmd": "psql -c \"UPDATE accounts SET balance = 0;\"", "label": "destructive", "category": "data"}
+{"cmd": "redis-cli FLUSHALL", "label": "destructive", "category": "data"}
+{"cmd": "mongosh --eval 'db.dropDatabase()'", "label": "destructive", "category": "data"}
+{"cmd": "npx prisma migrate reset --force", "label": "destructive", "category": "data"}
+{"cmd": "rails db:drop", "label": "destructive", "category": "data"}
+{"cmd": "python manage.py flush --noinput", "label": "destructive", "category": "data"}
+{"cmd": "dropdb production", "label": "destructive", "category": "data"}
+{"cmd": "supabase db reset --linked", "label": "destructive", "category": "data"}
+{"cmd": "php artisan migrate:fresh", "label": "destructive", "category": "data"}
+{"cmd": "psql -c \"SELECT count(*) FROM orders;\"", "label": "safe", "category": "data"}
+{"cmd": "psql -c \"DELETE FROM sessions WHERE expires_at < now();\"", "label": "safe", "category": "data"}
+{"cmd": "mysql -e \"UPDATE users SET active = 1 WHERE id = 42;\"", "label": "safe", "category": "data"}
+{"cmd": "sqlite3 app.db 'SELECT * FROM drops LIMIT 5'", "label": "safe", "category": "data"}
+{"cmd": "redis-cli GET session:42", "label": "safe", "category": "data"}
+{"cmd": "npx prisma migrate deploy", "label": "safe", "category": "data"}
+{"cmd": "rails db:migrate", "label": "safe", "category": "data"}
+{"cmd": "python manage.py migrate", "label": "safe", "category": "data"}
+{"cmd": "pg_dump app > backup.sql", "label": "safe", "category": "data"}
+{"cmd": "mongosh --eval 'db.users.find().limit(5)'", "label": "safe", "category": "data"}
+{"cmd": "npx prisma migrate dev --name add_index", "label": "safe", "category": "data"}
+{"cmd": "terraform destroy", "label": "destructive", "category": "infra"}
+{"cmd": "terraform destroy -auto-approve -target=module.db", "label": "destructive", "category": "infra"}
+{"cmd": "terraform apply -auto-approve", "label": "destructive", "category": "infra"}
+{"cmd": "pulumi destroy --yes", "label": "destructive", "category": "infra"}
+{"cmd": "kubectl delete namespace payments", "label": "destructive", "category": "infra"}
+{"cmd": "kubectl delete pods --all -n default", "label": "destructive", "category": "infra"}
+{"cmd": "kubectl delete pvc data-postgres-0", "label": "destructive", "category": "infra"}
+{"cmd": "kubectl delete deployment api -n prod", "label": "destructive", "category": "infra"}
+{"cmd": "helm uninstall postgres -n production", "label": "destructive", "category": "infra"}
+{"cmd": "aws s3 rb s3://company-backups --force", "label": "destructive", "category": "infra"}
+{"cmd": "aws s3 rm s3://company-data/ --recursive", "label": "destructive", "category": "infra"}
+{"cmd": "aws rds delete-db-instance --db-instance-identifier main --skip-final-snapshot", "label": "destructive", "category": "infra"}
+{"cmd": "aws ec2 terminate-instances --instance-ids i-0abc123", "label": "destructive", "category": "infra"}
+{"cmd": "gcloud projects delete my-project", "label": "destructive", "category": "infra"}
+{"cmd": "gcloud sql instances delete main-db", "label": "destructive", "category": "infra"}
+{"cmd": "az group delete --name prod-rg --yes", "label": "destructive", "category": "infra"}
+{"cmd": "docker system prune -a --volumes -f", "label": "destructive", "category": "infra"}
+{"cmd": "docker volume rm pgdata", "label": "destructive", "category": "infra"}
+{"cmd": "docker compose down -v", "label": "destructive", "category": "infra"}
+{"cmd": "heroku apps:destroy --app myapp --confirm myapp", "label": "destructive", "category": "infra"}
+{"cmd": "curl -fsSL https://example.com/install.sh | sudo bash", "label": "destructive", "category": "infra"}
+{"cmd": "fly volumes destroy vol_123", "label": "destructive", "category": "infra"}
+{"cmd": "terraform plan", "label": "safe", "category": "infra"}
+{"cmd": "terraform apply", "label": "safe", "category": "infra"}
+{"cmd": "terraform init -upgrade", "label": "safe", "category": "infra"}
+{"cmd": "pulumi preview", "label": "safe", "category": "infra"}
+{"cmd": "kubectl get pods -n payments", "label": "safe", "category": "infra"}
+{"cmd": "kubectl describe deployment api", "label": "safe", "category": "infra"}
+{"cmd": "kubectl rollout restart deployment api -n staging", "label": "safe", "category": "infra"}
+{"cmd": "helm list -A", "label": "safe", "category": "infra"}
+{"cmd": "aws s3 ls s3://company-backups", "label": "safe", "category": "infra"}
+{"cmd": "aws s3 cp report.csv s3://company-data/reports/", "label": "safe", "category": "infra"}
+{"cmd": "aws rds describe-db-instances", "label": "safe", "category": "infra"}
+{"cmd": "gcloud projects list", "label": "safe", "category": "infra"}
+{"cmd": "az group list -o table", "label": "safe", "category": "infra"}
+{"cmd": "docker ps -a", "label": "safe", "category": "infra"}
+{"cmd": "docker compose down", "label": "safe", "category": "infra"}
+{"cmd": "docker image prune -f", "label": "safe", "category": "infra"}
+{"cmd": "curl -fsSL https://example.com/install.sh -o install.sh", "label": "safe", "category": "infra"}
+{"cmd": "curl https://api.example.com/health", "label": "safe", "category": "infra"}
+{"cmd": "docker compose up -d --build", "label": "safe", "category": "infra"}
+{"cmd": "curl -X POST https://api.example-host.com/graphql -H \"Authorization: Bearer $TOKEN\" -d '{\"query\":\"mutation { volumeDelete(volumeId: \\\"vol-prod-db\\\") }\"}'", "label": "destructive", "category": "incident"}
+{"cmd": "aws rds delete-db-cluster-snapshot --db-cluster-snapshot-identifier prod-nightly", "label": "destructive", "category": "incident"}
+{"cmd": "aws backup delete-recovery-point --backup-vault-name prod --recovery-point-arn arn:aws:backup:x", "label": "destructive", "category": "incident"}
+{"cmd": "curl -X DELETE https://api.example-host.com/v1/volumes/vol-prod-db/backups", "label": "destructive", "category": "incident"}

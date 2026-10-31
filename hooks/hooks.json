@@ -1,0 +1,18 @@
+{
+  "description": "paranoid-sre: block or confirm destructive shell commands before they run",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": ["${CLAUDE_PLUGIN_ROOT}/hooks/guard.py"],
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

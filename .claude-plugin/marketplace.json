@@ -1,0 +1,12 @@
+{
+  "name": "paranoid-sre",
+  "description": "paranoid-sre: an on-call SRE persona and command guard for coding agents",
+  "owner": { "name": "Shahabaj Sheikh", "url": "https://github.com/shahabajsk" },
+  "plugins": [
+    {
+      "name": "paranoid-sre",
+      "source": "./",
+      "description": "Persona skill plus a deterministic PreToolUse guard for destructive shell commands."
+    }
+  ]
+}
