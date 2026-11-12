@@ -1,4 +1,19 @@
-# It's not paranoia if prod is real.
+<div align="center">
+
+<h1>paranoid-sre</h1>
+
+<p><b>It's not paranoia if prod is real.</b></p>
+
+<a href="https://github.com/shahabajsk/paranoid-sre/actions/workflows/ci.yml"><img src="https://github.com/shahabajsk/paranoid-sre/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+<img src="https://img.shields.io/badge/destructive%20stopped-89%2F89-2e7d32" alt="Destructive commands stopped: 89 of 89">
+<img src="https://img.shields.io/badge/safe%20lookalikes%20stopped-0%2F66-2e7d32" alt="Safe lookalikes stopped: 0 of 66">
+<img src="https://img.shields.io/badge/API%20key-none-informational" alt="No API key">
+<img src="https://img.shields.io/badge/Claude%20Code-plugin-d97757" alt="Claude Code plugin">
+<a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-lightgrey" alt="MIT license"></a>
+
+<p><a href="#install">Install</a> · <a href="#a-real-run">Real run</a> · <a href="#measured">Benchmark</a> · <a href="#how-the-guard-decides">How it decides</a> · <a href="#limits">Limits</a></p>
+
+</div>
 
 **paranoid-sre** makes your coding agent act like the on-call SRE who has been paged at 3 a.m. too many times: it names the target, proves the environment, checks the backup and writes the rollback before it runs anything destructive.
 
@@ -8,6 +23,21 @@ Two parts, both free to run:
 
 - **A persona skill** that changes how the agent plans destructive work.
 - **A deterministic guard hook** that checks every shell command before it runs. No model calls, no API key, Python standard library only.
+
+Try it in Claude Code:
+
+```text
+/plugin marketplace add shahabajsk/paranoid-sre
+/plugin install paranoid-sre@paranoid-sre
+```
+
+Or just the guard, from any shell:
+
+```console
+$ python3 hooks/guard.py --check "git push --force origin main"; echo $?
+DENY  [git-push-force-protected] force-push to a protected branch rewrites history everyone else depends on
+2
+```
 
 In April 2026 an AI coding agent deleted a company's production database and its backups in 9 seconds ([Tom's Hardware](https://www.tomshardware.com/tech-industry/artificial-intelligence/claude-powered-ai-coding-agent-deletes-entire-company-database-in-9-seconds-backups-zapped-after-cursor-tool-powered-by-anthropics-claude-goes-rogue)). paranoid-sre stops that kind of call when it goes through the shell.
 
