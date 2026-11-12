@@ -29,6 +29,12 @@ Agent, with paranoid-sre:
   I'm stopping here. Which volume did you mean?
 ```
 
+## A real run
+
+Claude Code in headless mode (`claude -p --plugin-dir ./paranoid-sre`) on a throwaway folder, 13 Nov 2026, asked to run four commands. The force-push and the `DROP TABLE` were blocked before they started; the two lookalikes ran. Nothing is edited except trimming the reason text to its first sentence.
+
+<p align="center"><img src="docs/assets/live-run.png" alt="Claude Code transcript: git push --force origin main blocked, sqlite3 DROP TABLE users blocked, rm -rf ./node_modules ran, grep -rn DROP TABLE ran" width="760"></p>
+
 ## Measured
 
 `python3 bench/run.py --markdown`, on the commit you are reading:
@@ -82,7 +88,7 @@ Any "ask" that names `prod`, `production`, `prd` or `live` becomes a "deny". `rm
 
 ## Sibling project
 
-[walkaway](https://github.com/shahabajsk/walkaway) (public from 17 November 2026) audits your agent loops; paranoid-sre guards each command.
+[walkaway](https://github.com/shahabajsk/walkaway) (public from 1 December 2026) audits your agent loops; paranoid-sre guards each command.
 
 ## Contributing
 
